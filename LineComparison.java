@@ -1,28 +1,24 @@
+package lineComparison;
 
-public class LineComparison{
+public class LineComparison {
+	public static void main(String[] argv) {
+		Point p1 = new Point(1, 4);
+		Point p2 = new Point(2, 3);
 
-  static double length(int x1,int x2,int y1,int y2) {
-    double dis=(Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1)));
-   return dis;
-  }
+		Point p3 = new Point(1, 4);
+		Point p4 = new Point(2, 3);
 
-  public static void main(String[] args) {
-   int x1 = 0,y1 = 0;
-   int x2 = 4,y2 = 2;
+		Line line_1 = new Line(p1, p2);
+		Line line_2 = new Line(p3, p4);
+		
+		line_1.getLength();
+		line_2.getLength();
 
-   int p1 = 0,q1 = 0;
-   int p2 = 2,q2 = 2;
+		
+		if (line_1.equals(line_2))
+			System.out.println("l1 and l2 are equal");
+		else
+			System.out.println("l1 and l2 different");
+	}
 
-   double l1 = length(x1,y1,x2,y2);
-   double l2 = length(p1,q1,p2,q2);
-   System.out.println(l1);
-   System.out.println(l2);
-
-   if(String.valueOf(l1).compareTo(String.valueOf(l2)) < 0)
-   System.out.println("l1 shorter then l2");
-   else if(String.valueOf(l1).compareTo(String.valueOf(l2)) > 0)
-   System.out.println("l1 grater then l2");
-   else
-   System.out.println("l1 and l2 are Equals");
-  }
 }
